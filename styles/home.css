@@ -1,27 +1,28 @@
 body {
-    background-color: #6C48C5;
-    font-size: 24px;
+    background: rgb(182,98,205);
+    background: linear-gradient(90deg, rgba(182,98,205,1) 9%, rgba(251,154,209,1) 100%);
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .menu-bar-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     padding: 1% 1%;
     position: fixed;
     top: 3%;
-    left: 2%;
+    left: 1%;
     height: 90vh;
-    width: 17%;
-    border: 1px solid black;
+    width: 15%;
 }
 
 .main-container {
-    background-color: #F5EFFF;
+    background-color: #E5D4FF;
     position: fixed;
-    width: 50%;
-    left: 21%;
+    width: 53%;
+    left: 18%;
     top: 3%;
     height: 90vh;
     padding: 1% 1%;
@@ -29,61 +30,136 @@ body {
     flex-direction: column;
     overflow-y: auto;
     border: 1px solid #ccc;
-    scrollbar-color: #6C48C5 #F5EFFF;
+    scrollbar-color: #E1AEFF #E5D4FF;
     scrollbar-width: 0.5%;
+    border-radius: 20px 0px 0px 20px;
 }
 
 .quick-add-container {
-    background-color: gainsboro;
+    background-color: #E5D4FF;
     position: fixed;
     width: 23%;
     left: 73.05%;
     top: 3%;
     height: 90vh;
     padding: 1% 1%;
+    border-radius: 0px 20px 20px 0px;
 }
 
 .financial-status-box {
-    background-color: #6C48C5;
-    width: 100%;
-    min-height: 30vh;
+    min-height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.financial-status-box-header, .bank-cards-box-header, .expense-list-box-header {
+    font-weight: bold;
+    display: flex;
+    max-height: 5vh;
+    gap: 1%;
+    align-items: center;
+}
+
+.financial-status-box-header img, .bank-cards-box-header img, .expense-list-box-header img {
+    width: 7%;
+}
+
+.financial-status-box-body, .bank-cards-box-body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     gap: 2%;
+    overflow-x: auto;
+    padding: 1% 0%;
 }
 
 .bank-cards-box {
-    background-color: cadetblue;
-    width: 100%;
     min-height: 30vh;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+}
+
+.bank-cards-box-body div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
     gap: 2%;
+    padding: 1% 1.5%;
+    border-radius: 12px;
+    background-color: #A594F9;
+    background: rgb(205,139,249);
+    background: linear-gradient(45deg, rgba(205,139,249,1) 17%, rgba(251,154,209,1) 81%);
+    color: black;
+    min-width: 29%;
+}
+
+.balance-box-head, .expense-box-head, .investment-box-head, .debt-box-head {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5%;
+}
+
+.balance-box-head img, .expense-box-head img, .investment-box-head img, .debt-box-head img {
+    width: 19%;
+}
+
+.balance-box, .expense-box, .investment-box, .debt-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 1% 1.5%;
+    border-radius: 12px;
+    background-color: #d79df8;
+    color: black;
+    gap: 2%;
+    flex: 1;
 }
 
 .expense-list-box {
-    background-color: #6C48C5;
-    width: 100%;
     min-height: 65vh;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 2%;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 3vh;
+    margin-top: 2vh;
+}
+
+.expense-list-box-body table {
+    width: 100%;
+}
+
+.expense-list-box-body table th, .expense-list-box-body table td {
+    padding: 2%;
+    text-align: left;
+}
+
+.expense-list-box-body table tr {
+    background-color: #d79df8;
+    border: 5px solid white;
+    border-radius: 10px 0px 0px 10px;
 }
 
 button {
     border: 1px;
     border-radius: 5px;
-    font-size: 16px;
-    color: black;
-    font-weight: bold;
-    opacity: 0.4;
+    font-size: 20px;
+    color: white;
+    background-color: transparent;
     margin-bottom: 15%;
-    width: 70%;
+    width: 100%;
     height: 4%;
-    padding: 1% 1%;
+    padding: 1% 1% 1% 4%;
+    text-align: left;
+}
+
+.button-clicked {
+    background-color: #E1AEFF;
+    color: black;
 }
 
 .menu-bar-container button:last-child {
@@ -94,10 +170,13 @@ button {
 .app-name {
     display: flex;
     margin-bottom: 20%;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
+    color: #FFFFF0;
+    gap: 5%;
+    font-size: 24px;
 }
 
 .app-name img {
-    width: 50%;
+    width: 30%;
 }

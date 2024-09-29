@@ -12,22 +12,125 @@
             <img src="../assets/icon.jpeg" />
             <p>Money Guru</p>
         </div>
-        <button>Home</button>
-        <button>Expenses</button>
-        <button>Statistics</button>
-        <button>Investments</button>
-        <button>Profile</button>
+        <button onclick="triggerMenu(this)">Home</button>
+        <button onclick="triggerMenu(this)">Expenses</button>
+        <button onclick="triggerMenu(this)">Statistics</button>
+        <button onclick="triggerMenu(this)">Investments</button>
+        <button onclick="triggerMenu(this)">Profile</button>
         <button>Logout</button>
     </div>
     <div class="main-container">
         <div class="financial-status-box">
+            <div class="financial-status-box-header">
+                <img src="../assets/indian-rupee.png" />
+                <p>Current Status</p>
+            </div>
+            <div class="financial-status-box-body">
+                <div class="balance-box">
+                    <div class="balance-box-head">
+                        <img src="../assets/wallet.png" />
+                        <p>Balance</p>
+                    </div>
+                    <p>₹ 52,000</p>
+                </div>
+                <div class="expense-box">
+                    <div class="expense-box-head">
+                        <img src="../assets/expense.png" />
+                        <p>Expenses</p>
+                    </div>
+                    <p>₹ 16,000</p>
+                </div>
+                <div class="investment-box">
+                    <div class="investment-box-head">
+                        <img src="../assets/savings.png" />
+                        <p>Savings</p>
+                    </div>
+                    <p>₹ 36,000</p>
+                </div>
+                <div class="debt-box">
+                    <div class="debt-box-head">
+                        <img src="../assets/debt.png" />
+                        <p>Debt</p>
+                    </div>
+                    <p>₹ 0</p>
+                </div>
+            </div>
         </div>
         <div class="bank-cards-box">
+            <div class="bank-cards-box-header">
+                <img src="../assets/bank-card.png" />
+                <p>Bank Cards</p>
+            </div>
+            <div class="bank-cards-box-body">
+                <div class="bank-card">
+                    <p>City Union Bank</p>
+                    <p>₹ 20,000</p>
+                </div>
+                <div class="bank-card">
+                    <p>ICICI Bank</p>
+                    <p>₹ 10,000</p>
+                </div>
+                <div class="bank-card">
+                    <p>HDFC Bank</p>
+                    <p>₹ 22,000</p>
+                </div>
+                <div class="bank-card">
+                    <p>SBI Bank</p>
+                    <p>₹ 0</p>
+                </div>
+            </div>
         </div>
         <div class="expense-list-box">
+            <div class="expense-list-box-header">
+                <img src="../assets/activity.png" />
+                <p>Recent Transactions</p>
+            </div>
+            <div class="expense-list-box-body">
+                <table>
+                    <tr class="expense-list-item">
+                        <th>Category</th>
+                        <th>Expense</th>
+                        <th>Date</th>
+                    </tr>
+                    <tr class="expense-list-item">
+                        <td>Shopping</td>
+                        <td>₹ 5000</td>
+                        <td>12/12/2020</td>
+                    </tr>
+                    <tr class="expense-list-item">
+                        <td>Food</td>
+                        <td>₹ 2000</td>
+                        <td>12/12/2020</td>
+                    </tr>
+                    <tr class="expense-list-item">
+                        <td>Travel</td>
+                        <td>₹ 3000</td>
+                        <td>12/12/2020</td>
+                    </tr>
+                    <tr class="expense-list-item">
+                        <td>Entertainment</td>
+                        <td>₹ 1000</td>
+                        <td>12/12/2020</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
     <div class="quick-add-container">
     </div>
 </body>
+<script>
+    function triggerMenu(button) {
+        console.log('Menu triggered', button);
+        document.querySelectorAll('.menu-bar-container button').forEach((btn) => {
+            btn.classList.remove('button-clicked');
+            if (btn === button) {
+                button.classList.add('button-clicked');
+            }
+        }); 
+    }
+    onload = () => {
+        document.querySelector('.menu-bar-container button').click();
+    }
+</script>
 </html>
